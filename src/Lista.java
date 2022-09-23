@@ -34,9 +34,26 @@ public class Lista {
 
     public void imprimirDoInicioAoFim() {
         Node atual = this.inicio;
+        String response = "";
+        boolean isAtualNotNull = atual != null;
+
+        while (isAtualNotNull) {
+            response += atual.getValor();
+            atual = atual.getProximo();
+            isAtualNotNull = atual != null;
+
+            if (isAtualNotNull) {
+                response += ", ";
+            }
+        }
+        System.out.println(response);
+    }
+
+    public void imprimirDoFimAoInicio() {
+        Node atual = this.fim;
         while (atual != null) {
             System.out.println(atual.getValor());
-            atual = atual.getProximo();
+            atual = atual.getAnterior();
         }
     }
 }
