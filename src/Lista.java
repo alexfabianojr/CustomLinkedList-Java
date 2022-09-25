@@ -10,6 +10,12 @@ public class Lista {
         }
     }
 
+    /***
+     * 1 - Criar o novo nó
+     * 2 - Referenciar no ultimo-nó o novo-nó como o próximo
+     * 3 - Referenciar no novo-nó o último-nó como anterior
+     * 4 - Substituir o ultimo-no pelo novo-nó como fim
+     */
     private void adicionarNodeExtra(int valor) {
         Node newNode = new Node();
         newNode.setValor(valor);
@@ -33,23 +39,16 @@ public class Lista {
     }
 
     public void imprimirDoInicioAoFim() {
+        System.out.println("-- Imprimindo do inicio ao fim");
         Node atual = this.inicio;
-        String response = "";
-        boolean isAtualNotNull = atual != null;
-
-        while (isAtualNotNull) {
-            response += atual.getValor();
+        while (atual != null) {
+            System.out.println(atual.getValor());
             atual = atual.getProximo();
-            isAtualNotNull = atual != null;
-
-            if (isAtualNotNull) {
-                response += ", ";
-            }
         }
-        System.out.println(response);
     }
 
     public void imprimirDoFimAoInicio() {
+        System.out.println("-- Imprimindo do fim ao inicio");
         Node atual = this.fim;
         while (atual != null) {
             System.out.println(atual.getValor());
